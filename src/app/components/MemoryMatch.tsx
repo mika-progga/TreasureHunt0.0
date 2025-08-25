@@ -156,7 +156,7 @@ export default function MemoryMatch() {
           <div className={styles.popupContent}>
             <h3>🧠 Memory Match Rules</h3>
             <div className={styles.rules}>
-              <p>• You have 2 minutes to complete the game</p>
+              <p>• You have 110 seconds to complete the game</p>
               <p>• Match all pairs of emojis to win</p>
               <p>• Timer starts when you click your first tile</p>
               <p>• If time runs out, the game will auto-shuffle</p>
@@ -214,5 +214,6 @@ export default function MemoryMatch() {
     </div>
   )
 }
+
 
 
