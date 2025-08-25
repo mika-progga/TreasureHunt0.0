@@ -39,7 +39,7 @@ export default function MemoryMatch() {
   const [won, setWon] = useState(false)
   const [showRules, setShowRules] = useState(true)
   const [gameStarted, setGameStarted] = useState(false)
-  const [timeLeft, setTimeLeft] = useState(100)
+  const [timeLeft, setTimeLeft] = useState(120)
   const [showWinPopup, setShowWinPopup] = useState(false)
   const [gameEndedByTimeout, setGameEndedByTimeout] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
@@ -55,7 +55,7 @@ export default function MemoryMatch() {
     setWon(false)
     setShowWinPopup(false)
     setGameStarted(false)
-    setTimeLeft(100)
+    setTimeLeft(120)
     setGameEndedByTimeout(false)
     if (timerRef.current) {
       clearTimeout(timerRef.current)
@@ -64,7 +64,7 @@ export default function MemoryMatch() {
 
   const handleTimeUp = useCallback(() => {
     setGameStarted(false)
-    setTimeLeft(100)
+    setTimeLeft(120)
     setGameEndedByTimeout(true)
     setShowRules(true)
     if (timerRef.current) {
@@ -156,7 +156,7 @@ export default function MemoryMatch() {
           <div className={styles.popupContent}>
             <h3>🧠 Memory Match Rules</h3>
             <div className={styles.rules}>
-              <p>• You have 100 seconds to complete the game</p>
+              <p>• You have 2 minutes to complete the game</p>
               <p>• Match all pairs of emojis to win</p>
               <p>• Timer starts when you click your first tile</p>
               <p>• If time runs out, the game will auto-shuffle</p>
@@ -214,3 +214,4 @@ export default function MemoryMatch() {
     </div>
   )
 }
+
