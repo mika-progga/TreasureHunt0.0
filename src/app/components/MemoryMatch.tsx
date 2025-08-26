@@ -39,7 +39,7 @@ export default function MemoryMatch() {
   const [won, setWon] = useState(false)
   const [showRules, setShowRules] = useState(true)
   const [gameStarted, setGameStarted] = useState(false)
-  const [timeLeft, setTimeLeft] = useState(300)
+  const [timeLeft, setTimeLeft] = useState(100)
   const [showWinPopup, setShowWinPopup] = useState(false)
   const [gameEndedByTimeout, setGameEndedByTimeout] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
@@ -55,7 +55,7 @@ export default function MemoryMatch() {
     setWon(false)
     setShowWinPopup(false)
     setGameStarted(false)
-    setTimeLeft(300)
+    setTimeLeft(100)
     setGameEndedByTimeout(false)
     if (timerRef.current) {
       clearTimeout(timerRef.current)
@@ -64,7 +64,7 @@ export default function MemoryMatch() {
 
   const handleTimeUp = useCallback(() => {
     setGameStarted(false)
-    setTimeLeft(300)
+    setTimeLeft(100)
     setGameEndedByTimeout(true)
     setShowRules(true)
     if (timerRef.current) {
@@ -178,7 +178,7 @@ export default function MemoryMatch() {
             <p>
               <strong>Here&apos;s your clue:</strong>
             </p>
-            <div className={styles.clue}>&quot;Outside the place of food and trays , it shows the map of the building &apos;s is maze...&quot;</div>
+            <div className={styles.clue}>&quot;Outside the place of food and trays , it shows the map of the building&apos;s is maze...&quot;</div>
             <button className={styles.okButton} onClick={() => setShowWinPopup(false)}>
               Got it!
             </button>
@@ -214,6 +214,7 @@ export default function MemoryMatch() {
     </div>
   )
 }
+
 
 
 
